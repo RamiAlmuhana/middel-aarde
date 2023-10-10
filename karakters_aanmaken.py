@@ -1,3 +1,4 @@
+import tkinter
 from tkinter import Tk, Label, Entry, OptionMenu, StringVar, Button
 
 root = Tk()
@@ -36,6 +37,13 @@ def hoofdmenu_scherm():
     back_button.pack()
 
 
+def personages_wegschrijven(text_File):
+    with open("karakters.txt", "a") as file:
+        user_Input = text_File.get()
+        file.write(f"{user_Input};\n")
+        text_File.delete(0, tkinter.END)
+
+
 def main():
     root.title("Personage aanmaken")
 
@@ -51,7 +59,7 @@ def main():
 
     # Buttons
     terug_knop = Button(root, text="Terug", command=lambda: hoofdmenu_scherm())
-    aanmaak_knop = Button(root, text="Aanmaken", command=lambda: karakter_aanmaken())
+    aanmaak_knop = Button(root, text="Aanmaken", command=lambda: personages_wegschrijven(gebruikers_input))
 
     # Invoerveld
     gebruikers_input = Entry(root)
