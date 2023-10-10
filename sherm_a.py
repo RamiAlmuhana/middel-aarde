@@ -1,4 +1,7 @@
 from tkinter import Label, Button
+from PIL import Image
+
+
 
 
 def ga_naar_scherm_b(venster):

@@ -8,8 +8,18 @@ deze functie kan worden geïmporteerd uit de andere files en worden aangeroepen
 fonts:
 
 
-images resizen:
+-images resizen:
+Pip3 install Pillow
+from PIL import Image, ImageTk
 
+im = Image.open("ybear.jpg")
+resize = im.resize((200, 200))
+voorbeeld = ImageTk.PhotoImage(resize)
+
+label_image = Label(root, image=voorbeeld)
+label_image.image = voorbeeld
+
+label_image.pack()
 
 (globals):
 
