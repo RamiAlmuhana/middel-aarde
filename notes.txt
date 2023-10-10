@@ -1,0 +1,29 @@
+-wisselen van schermen:
+maak een apart bestand met een nieuwe functie:
+    for widget in venster.winfo_children():
+        widget.destroy()
+    en maak het nieuwe scherm
+deze functie kan worden geïmporteerd uit de andere files en worden aangeroepen
+
+fonts:
+
+
+-images resizen:
+Pip3 install Pillow
+from PIL import Image, ImageTk
+
+im = Image.open("ybear.jpg")
+resize = im.resize((200, 200))
+voorbeeld = ImageTk.PhotoImage(resize)
+
+label_image = Label(root, image=voorbeeld)
+label_image.image = voorbeeld
+
+label_image.pack()
+
+(globals):
+
+
+Label omzetten naar button:
+
+
