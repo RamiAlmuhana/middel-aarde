@@ -2,7 +2,7 @@ from tkinter import Label, Button
 
 
 def ga_naar_scherm_a(venster):
-    from sherm_a import maak_scherm_a_aan
+    from workshop.sherm_a import maak_scherm_a_aan
     maak_scherm_a_aan(venster)
 
 
