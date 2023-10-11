@@ -1,3 +1,3 @@
-Frode;; Hobbit;; beschrijving;; zwaard;; plaatje
-Aragorn;; ras;; beschrijving;; supersterk;; plaatje
-Legolas;; ras;; beschrijving;; boog;; plaatje
+Frode;; Hobbit;; Frodo Baggins is een hobbit die de Ene Ring moet vernietigen om de wereld te redden. ;; super slim;; plaatje
+Aragorn;; Mens;; Aragorn, een dappere strijder en erfgenaam van Isildur, leidt Gondor en vecht tegen de vijanden van Midden-Aarde;; zwaard;; plaatje
+Legolas;; Elf;; Legolas, de elfenboogschutter, staat bekend om zijn ongeëvenaarde boogschietvaardigheden ;; boog;; plaatje
