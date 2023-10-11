@@ -1,0 +1,3 @@
+Frode;; Hobbit;; beschrijving;; zwaard;; plaatje
+Aragorn;; ras;; beschrijving;; supersterk;; plaatje
+Legolas;; ras;; beschrijving;; boog;; plaatje
