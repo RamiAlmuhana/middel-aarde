@@ -1,7 +1,8 @@
 from tkinter import Label, Button, Tk
+from keuzemomenten import maak_keuzemoment
 
 
-def maak_verhaal_dict(verhaal):
+def maak_verhaal_dict(root, karakter,verhaal):
     with open(verhaal) as bestand:
         verhaaldata = bestand.read()
     verhaaldata = verhaaldata.splitlines()
@@ -10,7 +11,7 @@ def maak_verhaal_dict(verhaal):
         split_data = line.split(';;')
         verhaal_dict = {
             'naam': split_data[0],
-            'stap': split_data[1],
+            'stap': int(split_data[1]),
             'tekst_1': split_data[2],
             'plaatje_1': split_data[3],
             'tekst_2': split_data[4],
@@ -25,16 +26,16 @@ def maak_verhaal_dict(verhaal):
             'keuze_3': split_data[13],
         }
         export.append(verhaal_dict)
-    print(export)
+    maak_keuzemoment(root, karakter, export, 0, 'tekst_1')
 
 
 def kies_verhaal(root, karakter):
     for widget in root.winfo_children():
         widget.destroy()
     instructie = Label(root, text='In welk verhaal wil je je verdiepen?')
-    button_1 = Button(root, text='verhaal 1', command=lambda: maak_verhaal_dict('verhaal_1.txt'))
-    button_2 = Button(root, text='verhaal 2', command=lambda: maak_verhaal_dict('verhaal_2.txt'))
-    button_3 = Button(root, text='verhaal 3', command=lambda: maak_verhaal_dict('verhaal_3.txt'))
+    button_1 = Button(root, text='verhaal 1', command=lambda: maak_verhaal_dict(root, karakter, 'verhaal_1.txt'))
+    button_2 = Button(root, text='verhaal 2', command=lambda: maak_verhaal_dict(root, karakter, 'verhaal_2.txt'))
+    button_3 = Button(root, text='verhaal 3', command=lambda: maak_verhaal_dict(root, karakter, 'verhaal_3.txt'))
 
     instructie.pack()
     button_1.pack()
