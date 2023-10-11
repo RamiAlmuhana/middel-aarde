@@ -37,10 +37,12 @@ def hoofdmenu_scherm():
     back_button.pack()
 
 
-def personages_wegschrijven(text_File):
+def personages_wegschrijven(text_File, selected_rassen, selected_eigenschappen):
     with open("karakters.txt", "a") as file:
         user_Input = text_File.get()
-        file.write(f"{user_Input};\n")
+        selected_option_rassen = selected_rassen.get()
+        selected_option_eigenschappen = selected_eigenschappen.get()
+        file.write(f"{user_Input};{selected_option_rassen};{selected_option_eigenschappen}\n")
         text_File.delete(0, tkinter.END)
 
 
@@ -59,20 +61,21 @@ def main():
 
     # Buttons
     terug_knop = Button(root, text="Terug", command=lambda: hoofdmenu_scherm())
-    aanmaak_knop = Button(root, text="Aanmaken", command=lambda: personages_wegschrijven(gebruikers_input))
+    aanmaak_knop = Button(root, text="Aanmaken", command=lambda: personages_wegschrijven(gebruikers_input, rassen_clicked, eigenschappen_clicked))
 
     # Invoerveld
     gebruikers_input = Entry(root)
 
+
     # Keuzemenu's
-    rassen = ["Mens", "Elf", "Ainur"]
+    rassen = ["Mens", "Elf", "Hobbit", "Dwerg"]
     eigenschappen = ["Supersterk", "Zwaard", "Boog", "Magie", "Toverstaf"]
 
     rassen_clicked = StringVar()
     eigenschappen_clicked = StringVar()
 
-    rassen_clicked.set("Mens")
-    eigenschappen_clicked.set("Supersterk")
+    rassen_clicked.set(rassen[0])
+    eigenschappen_clicked.set(eigenschappen[0])
 
     rassen_menu = OptionMenu(root, rassen_clicked, *rassen)
     eigenschappen_menu = OptionMenu(root, eigenschappen_clicked, *eigenschappen)
