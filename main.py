@@ -1,5 +1,5 @@
 import tkinter as tk
-import time
+import splashscreen
 
 def center_window(window):
     window.update_idletasks()
@@ -9,48 +9,17 @@ def center_window(window):
     y = (screen_height - window.winfo_height()) // 2
     window.geometry("+{}+{}".format(x, y))
 
-def fade_in():
-    for alpha in range(0, 256, 8):
-        splash_window.attributes("-alpha", alpha / 255)
-        splash_window.update_idletasks()
-        time.sleep(0.02)
+def main_app():
+    main_window = tk.Tk()
+    main_window.title("Lord of the Rings")
+    main_window.geometry("1200x800")
+    center_window(main_window)
 
-def fade_out():
-    for alpha in range(255, -1, -8):
-        splash_window.attributes("-alpha", alpha / 255)
-        splash_window.update_idletasks()
-        time.sleep(0.02)
+    label = tk.Label(main_window, text="Lord of the rings", font=("Helvetica", 20))
+    label.pack()
 
-def change_image():
-    splash_label.configure(image=splash_image2)
-    splash_label.image = splash_image2
-
-    fade_in()
-
-    splash_window.after(5000, fade_out)
-
-def main():
-    global splash_window
-    splash_window = tk.Tk()
-    splash_window.overrideredirect(True)
-    splash_window.geometry("400x400")
-    center_window(splash_window)
-
-    global splash_image1
-    splash_image1 = tk.PhotoImage(file="images/team gandalf logo.png")
-
-    global splash_image2
-    splash_image2 = tk.PhotoImage(file="images/tolkien estate logo.png")
-
-    global splash_label
-    splash_label = tk.Label(splash_window, image=splash_image1, borderwidth=0)
-    splash_label.pack()
-
-    fade_in()
-
-    splash_window.after(3000, change_image)
-
-    splash_window.mainloop()
+    main_window.mainloop()
 
 if __name__ == "__main__":
-    main()
+    splashscreen.main()
+    main_app()
