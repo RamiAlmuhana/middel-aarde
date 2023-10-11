@@ -34,6 +34,3 @@ def on_back_button_clicked(venster):
     for widget in venster.winfo_children():
         widget.destroy()
     kies_karakter(venster)
-
-
-
