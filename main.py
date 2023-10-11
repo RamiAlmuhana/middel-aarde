@@ -2,15 +2,15 @@ import tkinter as tk
 import pygame
 
 pygame.mixer.init()
-sound = pygame.mixer.Sound("audio/beep.mp3")
+pygame.mixer.music.load("audio/1.mp3")
+pygame.mixer.music.play()
+pygame.mixer.music.set_volume(0.5)
 
-def play_sound():
-    sound.play()
 
 root = tk.Tk()
-root.title("Beep")
+root.title("Muziek")
 
-play_button = tk.Button(root, text="Play Sound", command=play_sound)
+play_button = tk.Button(root, text="Hoi")
 play_button.pack()
 
 root.mainloop()
