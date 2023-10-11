@@ -14,7 +14,7 @@ def maak_keuzemoment(root, karakter, verhaal, stage, keuzetekst):
 
         progress.pack()
         verhaaltekst.pack()
-        if 'je bent dood' not in verhaal[stage][keuzetekst]:
+        if '   ' not in verhaal[stage][keuzetekst]:
             button_1.pack(side="left", pady=50, padx=10)
             button_2.pack(side="left", pady=50, padx=250)
             button_3.pack(side="left", pady=50, padx=10)
