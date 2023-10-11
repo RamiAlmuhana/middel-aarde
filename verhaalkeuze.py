@@ -20,10 +20,9 @@ def maak_verhaal_dict(root, karakter, verhaal):
             'plaatje_3': split_data[7],
             'eig_tekst': split_data[8],
             'eig_plaatje': split_data[9],
-            'achtergrond': split_data[10],
-            'keuze_1': split_data[11],
-            'keuze_2': split_data[12],
-            'keuze_3': split_data[13],
+            'keuze_1': split_data[10],
+            'keuze_2': split_data[11],
+            'keuze_3': split_data[12],
         }
         export.append(verhaal_dict)
     maak_keuzemoment(root, karakter, export, 0, 'tekst_1')

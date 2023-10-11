@@ -13,7 +13,7 @@ def karakter_gekozen(venster, karakter):
 
     karakternaam.pack()
     label_1.pack(side="top", pady=50, padx=10)
-    button1.pack(side="left", pady=50, padx=10)
+    button1.pack(side="left", pady=50, padx=250)
     button2.pack(side="left", pady=50, padx=10)
 
 
