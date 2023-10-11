@@ -1,6 +1,4 @@
 import tkinter as tk
-import tkinter.font as tkFont
-
 
 def knop_sluiten(main_window):
     main_window.destroy()
