@@ -31,12 +31,15 @@ def maak_verhaal_dict(root, karakter, verhaal):
 def kies_verhaal(root, karakter):
     for widget in root.winfo_children():
         widget.destroy()
-    instructie = Label(root, text='In welk verhaal wil je je verdiepen?')
-    button_1 = Button(root, text='verhaal 1', command=lambda: maak_verhaal_dict(root, karakter, 'verhaal_1.txt'))
-    button_2 = Button(root, text='verhaal 2', command=lambda: maak_verhaal_dict(root, karakter, 'verhaal_2.txt'))
-    button_3 = Button(root, text='verhaal 3', command=lambda: maak_verhaal_dict(root, karakter, 'verhaal_3.txt'))
+
+    button_font = ("Footlight MT Light", 13, "bold")
+
+    instructie = Label(root, text='In welk verhaal wil je je verdiepen?', font=("Footlight MT Light", 18))
+    button_1 = Button(root, text='verhaal 1',width=30, height=7, command=lambda: maak_verhaal_dict(root, karakter, 'verhaal_1.txt'), font=button_font)
+    button_2 = Button(root, text='verhaal 2',width=30, height=7, command=lambda: maak_verhaal_dict(root, karakter, 'verhaal_2.txt'), font=button_font)
+    button_3 = Button(root, text='verhaal 3',width=30, height=7, command=lambda: maak_verhaal_dict(root, karakter, 'verhaal_3.txt'), font=button_font)
 
     instructie.pack()
-    button_1.pack()
-    button_2.pack()
-    button_3.pack()
+    button_1.pack(side="left", pady=50, padx=12)
+    button_2.pack(side="left", pady=50, padx=200)
+    button_3.pack(side="left", pady=50, padx=10)

@@ -29,7 +29,7 @@ def kies_karakter(venster):
     knoppen_frame = Frame(venster)
     knoppen_frame.pack(expand=True)
 
-    button_font = ("Helvetica", 12, "bold")
+    button_font = ("Footlight MT Light", 12, "bold")
 
     button_1 = Button(knoppen_frame, text=karakter_data[0]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, karakter_data[0]), font=button_font)
     button_2 = Button(knoppen_frame, text=karakter_data[1]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, karakter_data[1]), font=button_font)
