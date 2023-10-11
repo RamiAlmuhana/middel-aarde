@@ -1,0 +1,2 @@
+boswandeling;;stap;;je loopt het bos in;;plaatje 1;;tekst 2;;plaatje 2;;tekst 3;;plaatje 3;;eigensch. tekst;;eigensch. plaatje;;achtergrond;;keer om;;loop verder;;optie 3
+verhaalnaam;;stap;;verhaaltekst 1;;plaatje 1;;verhaaltekst 2;;plaatje;;verhaaltekst 3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;achtergrond;;eerste optie;;tweede optie;;derde optie
