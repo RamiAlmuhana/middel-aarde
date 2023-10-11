@@ -65,8 +65,8 @@ def main():
     gebruikers_input = Entry(root)
 
     # Keuzemenu's
-    rassen = ["Mens", "Elf", "Dwerg"]
-    eigenschappen = ["Supersterk", "Zwaard", "Mes"]
+    rassen = ["Mens", "Elf", "Ainur"]
+    eigenschappen = ["Supersterk", "Zwaard", "Boog", "Magie", "Toverstaf"]
 
     rassen_clicked = StringVar()
     eigenschappen_clicked = StringVar()
