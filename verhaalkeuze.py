@@ -41,14 +41,3 @@ def kies_verhaal(root, karakter):
     button_1.pack()
     button_2.pack()
     button_3.pack()
-
-    root.mainloop()
-
-
-def test_start():
-    root = Tk()
-    root.geometry('1400x700')
-    kies_verhaal(root, 'frodo')
-
-
-test_start()

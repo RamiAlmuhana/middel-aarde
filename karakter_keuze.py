@@ -1,5 +1,6 @@
 from tkinter import Tk, Label, Button, Frame
-from scherm_1 import *
+from beschrijving_karakters import *
+
 
 def maak_karakter_dict():
     with open("tekstbestand.txt") as bestand:
@@ -37,14 +38,3 @@ def kies_karakter(venster):
     button_1.pack(side="left", padx=10)
     button_2.pack(side="left", padx=10)
     button_3.pack(side="left", padx=10)
-
-def test_star(venster):
-    kies_karakter(venster)
-    venster.geometry("600x600")
-    venster.title("Karakter Kiezen")
-
-
-
-venster = Tk()
-test_star(venster)
-venster.mainloop()
