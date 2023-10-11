@@ -2,7 +2,7 @@ from tkinter import Label, Button, Tk
 from keuzemomenten import maak_keuzemoment
 
 
-def maak_verhaal_dict(root, karakter,verhaal):
+def maak_verhaal_dict(root, karakter, verhaal):
     with open(verhaal) as bestand:
         verhaaldata = bestand.read()
     verhaaldata = verhaaldata.splitlines()
