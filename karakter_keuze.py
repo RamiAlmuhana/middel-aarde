@@ -1,5 +1,8 @@
 from tkinter import Tk, Label, Button, Frame
-from scherm_1 import kies_karakter_1, kies_karakter_2, kies_karakter_3
+from scherm_1 import *
+
+def maak_karakter_dict():
+
 def kies_karakter(venster):
     for widget in venster.winfo_children():
         widget.destroy()

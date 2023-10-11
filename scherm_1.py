@@ -1,5 +1,5 @@
-from tkinter import *
-from karakter_keuze import *
+from tkinter import Button, Label
+
 
 def kies_karakter_1(venster):
     for widget in venster.winfo_children():
@@ -31,6 +31,8 @@ def kies_karakter_3(venster):
 
 
 def on_back_button_clicked(venster):
+    from karakter_keuze import kies_karakter
     for widget in venster.winfo_children():
         widget.destroy()
     kies_karakter(venster)
+
