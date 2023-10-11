@@ -12,6 +12,13 @@ def open_instellingen(main_window):
     admin_inloggen.place(x=400, y=300)
 
 
+def open_main(main_window):
+    from main import main
+    for widget in main_window.winfo_children():
+        widget.destroy()
+    open_instellingen(main_window)
+
+
 def open_inlogscherm(main_window):
     global username_entry, password_entry  # Make these variables global
 
@@ -31,11 +38,11 @@ def open_inlogscherm(main_window):
     password_entry = tk.Entry(inlog_frame, show="*")
     password_entry.place(x=400, y=200)
 
-    muziek_button = tk.Button(inlog_frame, text="Muziek aan/uit", command=lambda: perform_login(main_window))
-    muziek_button.place(x=275, y=250)
-
     inlog_button = tk.Button(inlog_frame, text="Inloggen", command=lambda: perform_login(main_window))
     inlog_button.place(x=275, y=250)
+
+    go_back_button = tk.Button(inlog_frame, text="sluiten", command=lambda: open_main(main_window))
+    go_back_button.place(x=500, y=250)
 
 
 def perform_login(main_window):

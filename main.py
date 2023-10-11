@@ -26,6 +26,7 @@ def main():
     main_window.geometry("1400x700")
     center_window(main_window)
     main_window.configure(bg="darkgreen")
+    main_window.resizable(False, False)
 
     font = ("Helvetica", 16)
 
