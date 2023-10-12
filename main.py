@@ -1,5 +1,6 @@
 import tkinter as tk
 from instellingen import open_instellingen, open_inlogscherm, perform_login, show_admin_page
+import splashscreen
 
 # Define username and password entry as global variables
 username_entry = None
@@ -86,7 +87,8 @@ def main_app():
     personage_aanmaken.place(x=325, y=275)
     personage_aanmaken.config(font=font)
 
-    instellingen = tk.Button(main_window, text="Instellingen", bg='lightgreen', width=55, height=2, borderwidth=4)
+    instellingen = tk.Button(main_window, text="Instellingen", bg='lightgreen', width=55, height=2, borderwidth=4,
+                             command=lambda: open_instellingen(main_window), font=font)
     instellingen.place(x=325, y=375)
     instellingen.config(font=font)
 
