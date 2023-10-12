@@ -1,6 +1,7 @@
 import tkinter as tk
 from instellingen import open_instellingen, open_inlogscherm, perform_login, show_admin_page
 import splashscreen
+from karakters_aanmaken import karakters_scherm_aanmaken
 
 # Define username and password entry as global variables
 username_entry = None
@@ -54,8 +55,10 @@ def main():
 
     main_window.mainloop()
 
+
 def knop_sluiten(main_window):
     main_window.destroy()
+
 
 def center_window(window):
     window.update_idletasks()
@@ -64,6 +67,7 @@ def center_window(window):
     x = (screen_width - window.winfo_width()) // 2
     y = (screen_height - window.winfo_height()) // 2
     window.geometry("+{}+{}".format(x, y))
+
 
 def main_app():
     main_window = tk.Tk()
@@ -79,11 +83,14 @@ def main_app():
 
     font = ("Footlight MT Light", 16, 'bold')
 
-    personage_kiezen = tk.Button(main_window, text="Personage kiezen", bg='lightgreen', width=55, height=2, borderwidth=4)
+    personage_kiezen = tk.Button(main_window, text="Personage kiezen", bg='lightgreen', width=55, height=2,
+                                 borderwidth=4)
     personage_kiezen.place(x=325, y=175)
     personage_kiezen.config(font=font)
 
-    personage_aanmaken = tk.Button(main_window, text="Personage aanmaken", bg='lightgreen', width=55, height=2, borderwidth=4)
+    personage_aanmaken = tk.Button(main_window, text="Personage aanmaken", bg='lightgreen', width=55, height=2,
+                                   borderwidth=4,
+                                   command=lambda: karakters_scherm_aanmaken(main_window), font=font)
     personage_aanmaken.place(x=325, y=275)
     personage_aanmaken.config(font=font)
 
@@ -98,6 +105,7 @@ def main_app():
     sluiten.config(font=font)
 
     main_window.mainloop()
+
 
 if __name__ == "__main__":
     splashscreen.main()

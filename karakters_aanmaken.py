@@ -1,41 +1,5 @@
-import tkinter
 from tkinter import Tk, Label, Entry, OptionMenu, StringVar, Button
-
-main_window = Tk()
-main_window.geometry("400x400")
-
-
-def karakter_aanmaken():
-    main_window.title("Personage aangemaakt")
-
-    # Verwijder de huidige widgets
-    for widget in main_window.winfo_children():
-        widget.destroy()
-
-    # Bevestigingsscherm maken
-    confirmation_label = Label(main_window, text="Personage is aangemaakt!", font=('Helvetica bold', 20))
-    confirmation_label.pack(pady=50)
-
-    # Terugknop naar het beginscherm
-    back_button = Button(main_window, text="Naar het hoofdmenu", command=lambda: hoofdmenu_scherm())
-    back_button.pack()
-
-
-def hoofdmenu_scherm():
-    main_window.title("Hoofdmenu")
-
-    # Verwijder de huidige widgets
-    for widget in main_window.winfo_children():
-        widget.destroy()
-
-    # Terugpagina maken
-    return_label = Label(main_window, text="Hoofdmenu", font=('Helvetica bold', 20))
-    return_label.pack(pady=50)
-
-    # Terugknop naar het beginscherm
-    back_button = Button(main_window, text="Karakter aanmaken", command=lambda: main())
-    back_button.pack()
-
+import tkinter as tk
 
 def personages_wegschrijven(text_File, selected_rassen, selected_eigenschappen):
     with open("karakters.txt", "a") as file:
@@ -43,31 +7,38 @@ def personages_wegschrijven(text_File, selected_rassen, selected_eigenschappen):
         selected_option_rassen = selected_rassen.get()
         selected_option_eigenschappen = selected_eigenschappen.get()
         file.write(f"{user_Input};{selected_option_rassen};{selected_option_eigenschappen}\n")
-        text_File.delete(0, tkinter.END)
+        text_File.delete(0, tk.END)
 
 
-def main():
-    main_window.title("Personage aanmaken")
+def karakter_aanmaken(main_window):
+    karakter_aanmaken_frame = tk.Frame(main_window)
+    karakter_aanmaken_frame.place(x=0, y=0, relwidth=1, relheight=1)
+    main_window.title("Personage aangemaakt")
 
-    # Verwijder de huidige widgets
-    for widget in main_window.winfo_children():
-        widget.destroy()
+    # Bevestigingsscherm maken
+    confirmation_label = Label(main_window, text="Personage is aangemaakt!", font=('Helvetica bold', 20))
+    confirmation_label.pack(pady=50)
 
+    # Terugknop naar het beginscherm
+    back_button = Button(main_window, text="Naar het hoofdmenu", command=lambda: main_window())
+    back_button.pack()
+    # Buttons
+    # terug_knop = Button(main_window, text="Terug", command=lambda: hoofdmenu_scherm())
+    # aanmaak_knop = Button(main_window, text="Aanmaken", command=lambda: personages_wegschrijven(gebruikers_input, rassen_clicked, eigenschappen_clicked))
+
+
+def karakters_scherm_aanmaken(main_window):
+    karakters_scherm_aanmaken = tk.Frame(main_window)
+    karakters_scherm_aanmaken.place(x=0, y=0, relwidth=1, relheight=1)
     # Labels
     titel = Label(main_window, text="Karakter aanmaken", font=('Helvetica bold', 20))
     karakter_naam_kiezen = Label(main_window, text="Naam kiezen")
     Karakter_ras_kiezen = Label(main_window, text="Rassen")
     Karakter_eigenschap_kiezen = Label(main_window, text="Eigenschappen")
 
-    # Buttons
-    terug_knop = Button(main_window, text="Terug", command=lambda: hoofdmenu_scherm())
-    aanmaak_knop = Button(main_window, text="Aanmaken", command=lambda: personages_wegschrijven(gebruikers_input, rassen_clicked, eigenschappen_clicked))
-
-    # Invoerveld
     gebruikers_input = Entry(main_window)
 
 
-    # Keuzemenu's
     rassen = ["Mens", "Elf", "Hobbit", "Dwerg"]
     eigenschappen = ["Supersterk", "Zwaard", "Boog", "Magie", "Toverstaf"]
 
@@ -88,9 +59,15 @@ def main():
     eigenschappen_menu.place(relx=0.5, rely=0.62, anchor="center")
     titel.pack()
     terug_knop.place(relx=0.25, rely=0.75, anchor="center")
-    aanmaak_knop.place(relx=0.75, rely=0.75, anchor="center")
+    # aanmaak_knop.place(relx=0.75, rely=0.75, anchor="center")
+
+
+
+#
+# def main(main_window):
+
 
 
 if __name__ == '__main__':
-    main()
+    karakters_scherm_aanmaken()
     main_window.mainloop()
