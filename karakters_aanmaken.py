@@ -1,39 +1,39 @@
 import tkinter
 from tkinter import Tk, Label, Entry, OptionMenu, StringVar, Button
 
-root = Tk()
-root.geometry("400x400")
+main_window = Tk()
+main_window.geometry("400x400")
 
 
 def karakter_aanmaken():
-    root.title("Personage aangemaakt")
+    main_window.title("Personage aangemaakt")
 
     # Verwijder de huidige widgets
-    for widget in root.winfo_children():
+    for widget in main_window.winfo_children():
         widget.destroy()
 
     # Bevestigingsscherm maken
-    confirmation_label = Label(root, text="Personage is aangemaakt!", font=('Helvetica bold', 20))
+    confirmation_label = Label(main_window, text="Personage is aangemaakt!", font=('Helvetica bold', 20))
     confirmation_label.pack(pady=50)
 
     # Terugknop naar het beginscherm
-    back_button = Button(root, text="Naar het hoofdmenu", command=lambda: hoofdmenu_scherm())
+    back_button = Button(main_window, text="Naar het hoofdmenu", command=lambda: hoofdmenu_scherm())
     back_button.pack()
 
 
 def hoofdmenu_scherm():
-    root.title("Hoofdmenu")
+    main_window.title("Hoofdmenu")
 
     # Verwijder de huidige widgets
-    for widget in root.winfo_children():
+    for widget in main_window.winfo_children():
         widget.destroy()
 
     # Terugpagina maken
-    return_label = Label(root, text="Hoofdmenu", font=('Helvetica bold', 20))
+    return_label = Label(main_window, text="Hoofdmenu", font=('Helvetica bold', 20))
     return_label.pack(pady=50)
 
     # Terugknop naar het beginscherm
-    back_button = Button(root, text="Karakter aanmaken", command=lambda: main())
+    back_button = Button(main_window, text="Karakter aanmaken", command=lambda: main())
     back_button.pack()
 
 
@@ -47,24 +47,24 @@ def personages_wegschrijven(text_File, selected_rassen, selected_eigenschappen):
 
 
 def main():
-    root.title("Personage aanmaken")
+    main_window.title("Personage aanmaken")
 
     # Verwijder de huidige widgets
-    for widget in root.winfo_children():
+    for widget in main_window.winfo_children():
         widget.destroy()
 
     # Labels
-    titel = Label(root, text="Karakter aanmaken", font=('Helvetica bold', 20))
-    karakter_naam_kiezen = Label(root, text="Naam kiezen")
-    Karakter_ras_kiezen = Label(root, text="Rassen")
-    Karakter_eigenschap_kiezen = Label(root, text="Eigenschappen")
+    titel = Label(main_window, text="Karakter aanmaken", font=('Helvetica bold', 20))
+    karakter_naam_kiezen = Label(main_window, text="Naam kiezen")
+    Karakter_ras_kiezen = Label(main_window, text="Rassen")
+    Karakter_eigenschap_kiezen = Label(main_window, text="Eigenschappen")
 
     # Buttons
-    terug_knop = Button(root, text="Terug", command=lambda: hoofdmenu_scherm())
-    aanmaak_knop = Button(root, text="Aanmaken", command=lambda: personages_wegschrijven(gebruikers_input, rassen_clicked, eigenschappen_clicked))
+    terug_knop = Button(main_window, text="Terug", command=lambda: hoofdmenu_scherm())
+    aanmaak_knop = Button(main_window, text="Aanmaken", command=lambda: personages_wegschrijven(gebruikers_input, rassen_clicked, eigenschappen_clicked))
 
     # Invoerveld
-    gebruikers_input = Entry(root)
+    gebruikers_input = Entry(main_window)
 
 
     # Keuzemenu's
@@ -77,8 +77,8 @@ def main():
     rassen_clicked.set(rassen[0])
     eigenschappen_clicked.set(eigenschappen[0])
 
-    rassen_menu = OptionMenu(root, rassen_clicked, *rassen)
-    eigenschappen_menu = OptionMenu(root, eigenschappen_clicked, *eigenschappen)
+    rassen_menu = OptionMenu(main_window, rassen_clicked, *rassen)
+    eigenschappen_menu = OptionMenu(main_window, eigenschappen_clicked, *eigenschappen)
 
     karakter_naam_kiezen.place(relx=0.5, rely=0.25, anchor="center")
     gebruikers_input.place(relx=0.5, rely=0.3, anchor="center")
@@ -93,4 +93,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-    root.mainloop()
+    main_window.mainloop()
