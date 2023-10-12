@@ -2,14 +2,17 @@ import tkinter as tk
 import splashscreen
 from karakters_aanmaken import karakter_aanmaken
 from instellingen import open_instellingen
+from karakter_keuze import kies_karakter
 
 
 def knop_sluiten(main_window):
     main_window.destroy()
 
+
 # Define username and password entry as global variables
 username_entry = None
 password_entry = None
+
 
 def center_window(window):
     window.update_idletasks()
@@ -18,11 +21,10 @@ def center_window(window):
     x = (screen_width - window.winfo_width()) // 2
     y = (screen_height - window.winfo_height()) // 2
     window.geometry("+{}+{}".format(x, y))
-    create_main_app_frame(window)
+    hoofd_menu(window)
 
-def create_main_app_frame(main_window):
-    # main_menu_frame = tk.Frame(main_window)
-    # main_menu_frame.place(x=0, y=0, relwidth=1, relheight=1)
+
+def hoofd_menu(main_window):
     for widget in main_window.winfo_children():
         widget.destroy()
     font = ("Footlight MT Light", 16, 'bold')
@@ -32,7 +34,9 @@ def create_main_app_frame(main_window):
     background_label.image = background_image
     background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-    personage_kiezen = tk.Button(main_window, text="Personage kiezen", bg='lightgreen', width=55, height=2, borderwidth=4)
+    personage_kiezen = tk.Button(main_window, text="Personage kiezen", bg='lightgreen', width=55, height=2,
+                                 borderwidth=4,
+                                 command=lambda: kies_karakter(main_window), font=font)
     personage_kiezen.place(x=325, y=175)
     personage_kiezen.config(font=font)
 
@@ -51,6 +55,3 @@ def create_main_app_frame(main_window):
                         width=55, height=2, borderwidth=4)
     sluiten.place(x=325, y=475)
     sluiten.config(font=font)
-
-# if __name__ == "__main__":
-#     # splashscreen.main()
