@@ -1,0 +1,3 @@
+Frodo;;Hobbit;;Frodo Baggins is een hobbit die de Ene Ring moet vernietigen om de wereld te redden.;;super slim;;plaatje
+Gimli;;Dwerg;;Gimli, leider van de dwergen. Altijd in een chagrijnig humeur en haat Elven;;bijl;;plaatje
+Legolas;;Elf;;Legolas, de elfenboogschutter, staat bekend om zijn ongeëvenaarde boogschietvaardigheden;;boog;;plaatje
