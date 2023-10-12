@@ -1,6 +1,7 @@
 import tkinter as tk
 import time
 
+
 def center_window(window):
     window.update_idletasks()
     screen_width = window.winfo_screenwidth()
@@ -8,6 +9,7 @@ def center_window(window):
     x = (screen_width - window.winfo_width()) // 2
     y = (screen_height - window.winfo_height()) // 2
     window.geometry("+{}+{}".format(x, y))
+
 
 def fade_in(splash_window):
     for alpha in range(0, 256, 8):

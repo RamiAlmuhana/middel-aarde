@@ -3,6 +3,7 @@ from muziek import toggle_music, play_startup_music
 
 
 def open_instellingen(main_window):
+    from main import create_main_app_frame
     font = ("Helvetica", 16)
     instellingen_frame = tk.Frame(main_window)
     instellingen_frame.place(x=0, y=0, relwidth=1, relheight=1)
@@ -14,8 +15,12 @@ def open_instellingen(main_window):
     admin_inloggen = tk.Button(instellingen_frame, text="Admin inloggen", bg='lightgreen', width=55, height=2,
                                command=lambda: open_inlogscherm(main_window), font=font)
     admin_inloggen.place(x=400, y=300)
+    terugknop = tk.Button(instellingen_frame, text="Terug naar main menu", bg='lightgreen', width=55, height=2,
+                               command=lambda: create_main_app_frame(main_window), font=font)
+    terugknop.place(x=400, y=400)
+
+
 def open_main(main_window):
-    from main import main
     for widget in main_window.winfo_children():
         widget.destroy()
     open_instellingen(main_window)
