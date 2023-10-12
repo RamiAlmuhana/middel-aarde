@@ -1,4 +1,5 @@
 import tkinter as tk
+from muziek import toggle_music, play_startup_music
 
 
 def open_instellingen(main_window):
@@ -7,11 +8,12 @@ def open_instellingen(main_window):
     instellingen_frame.place(x=0, y=0, relwidth=1, relheight=1)
     instellingen_frame.configure(bg="darkgreen")
 
+    muziek_button = tk.Button(instellingen_frame, text="Pause Music", bg='lightgreen', width=55, height=2, command=lambda: toggle_music(muziek_button), font=font)
+    muziek_button.place(x=400, y=200)
+
     admin_inloggen = tk.Button(instellingen_frame, text="Admin inloggen", bg='lightgreen', width=55, height=2,
                                command=lambda: open_inlogscherm(main_window), font=font)
     admin_inloggen.place(x=400, y=300)
-
-
 def open_main(main_window):
     from main import main
     for widget in main_window.winfo_children():
