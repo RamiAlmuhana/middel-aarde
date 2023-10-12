@@ -1,6 +1,9 @@
 import tkinter as tk
 import splashscreen
 
+def knop_sluiten(main_window):
+    main_window.destroy()
+
 def center_window(window):
     window.update_idletasks()
     screen_width = window.winfo_screenwidth()
