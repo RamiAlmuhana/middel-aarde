@@ -44,4 +44,4 @@ def kies_karakter(venster):
     button_1.pack(side="left", padx=10)
     button_2.pack(side="left", padx=100)
     button_3.pack(side="left", padx=10)
-    button_hoofdmenu.place(x=1250, y=550)
+    button_hoofdmenu.place(x=1250, y=600)
