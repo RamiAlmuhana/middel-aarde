@@ -28,5 +28,5 @@ def maak_keuzemoment(root, karakter, verhaal, stage, keuzetekst, keuzeplaatje, e
             dood = Label(root, text='je hebt verloren')
             dood.pack()
     else:
-        eindscherm = Label(root, text='eindscherm')
+        eindscherm = Label(root, text='eindscherm', font=("Footlight MT Light", 18))
         eindscherm.pack()

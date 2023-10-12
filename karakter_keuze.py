@@ -30,11 +30,12 @@ def kies_karakter(venster):
     knoppen_frame.pack(expand=True)
 
     button_font = ("Footlight MT Light", 12, "bold")
-
+    label1 = Label(knoppen_frame,text= "Welk karakter wilt u kiezen?", font=("Footlight MT Light", 18))
     button_1 = Button(knoppen_frame, text=karakter_data[0]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, karakter_data[0]), font=button_font)
     button_2 = Button(knoppen_frame, text=karakter_data[1]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, karakter_data[1]), font=button_font)
     button_3 = Button(knoppen_frame, text=karakter_data[2]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, karakter_data[2]), font=button_font)
 
+    label1.pack()
     button_1.pack(side="left", padx=10)
     button_2.pack(side="left", padx=10)
     button_3.pack(side="left", padx=10)
