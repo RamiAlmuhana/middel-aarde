@@ -37,12 +37,11 @@ def maak_keuzemoment(root, menu, karakter, verhaal, stage, keuzetekst, keuzeplaa
             karakterkeuzeknop.pack(side='left', pady=50, padx=20)
 
     else:
-        eindscherm = Label(root, text='eindscherm')
-        eindscherm.pack()
-        logo_image = PhotoImage(file="images/Einde verhaal 1.png")
-        logo_frame = Label(root, image=logo_image)
+        logo_image = PhotoImage(file=verhaal[stage][keuzeplaatje])
+        logo_frame = Label(root, image=logo_image, text=verhaal[stage][keuzetekst], font=('Footlight MT Light', 20),
+                           fg='white', compound='center')
         logo_frame.image = logo_image
         logo_frame.pack()
-        buttona = Button(eindscherm, text='ga terug', command=lambda: menu(root))
-        buttona.pack()
+        buttona = Button(root, text='ga terug', command=lambda: menu(root), font=button_font, bg='lightgreen')
+        buttona.place(x=630, y=550)
         return root
