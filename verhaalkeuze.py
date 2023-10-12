@@ -23,7 +23,7 @@ def maak_verhaal_dict(root, menu, karakter, verhaal):
             'keuze_1': split_data[10],
             'keuze_2': split_data[11],
             'keuze_3': split_data[12],
-        }
+            'eigenschap': split_data[13]        }
         export.append(verhaal_dict)
     maak_keuzemoment(root, menu, karakter, export, 0, 'tekst_1', '', '')
 
