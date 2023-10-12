@@ -1,7 +1,5 @@
 import tkinter as tk
-
-def knop_sluiten(main_window):
-    main_window.destroy()
+import splashscreen
 
 def center_window(window):
     window.update_idletasks()
@@ -45,4 +43,5 @@ def main_app():
     main_window.mainloop()
 
 if __name__ == "__main__":
+    splashscreen.main()
     main_app()
