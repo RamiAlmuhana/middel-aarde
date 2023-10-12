@@ -3,7 +3,7 @@ from beschrijving_karakters import *
 
 
 def maak_karakter_dict():
-    with open("tekstbestand.txt") as bestand:
+    with open("karakterdata.txt") as bestand:
         verhaaldata = bestand.read()
     verhaaldata = verhaaldata.splitlines()
     export = []
@@ -13,7 +13,7 @@ def maak_karakter_dict():
             "naam": split_data[0],
             "ras": split_data[1],
             "beschrijving": split_data[2],
-            "specialiteit": split_data[3],
+            "eigenschap": split_data[3],
             "foto": split_data[4]
         }
         export.append(verhaal_dict)

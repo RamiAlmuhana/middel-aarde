@@ -1,4 +1,4 @@
-from tkinter import Label, Button, Tk
+from tkinter import Label, Button
 from keuzemomenten import maak_keuzemoment
 
 
@@ -23,9 +23,10 @@ def maak_verhaal_dict(root, karakter, verhaal):
             'keuze_1': split_data[10],
             'keuze_2': split_data[11],
             'keuze_3': split_data[12],
+            'eigenschap': split_data[13]
         }
         export.append(verhaal_dict)
-    maak_keuzemoment(root, karakter, export, 0, 'tekst_1')
+    maak_keuzemoment(root, karakter, export, 0, 'tekst_1', '', '')
 
 
 def kies_verhaal(root, karakter):

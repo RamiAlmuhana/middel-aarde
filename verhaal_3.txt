@@ -1,9 +1,9 @@
-Het Ontwaken van de Enten;;1;;verhaaltekst 1-1-1;;plaatje 1;;verhaaltekst 1-1-2;;plaatje;;verhaaltekst 1-1-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie
-Het Ontwaken van de Enten;;2;;verhaaltekst 1-2-1;;plaatje 1;;verhaaltekst 1-2-2;;plaatje;;verhaaltekst 1-2-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie
-Het Ontwaken van de Enten;;3;;verhaaltekst 1-3-1;;plaatje 1;;verhaaltekst 1-3-2;;plaatje;;verhaaltekst 1-3-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie
-Het Ontwaken van de Enten;;4;;verhaaltekst 1-4-1;;plaatje 1;;verhaaltekst 1-4-2;;plaatje;;verhaaltekst 1-4-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie
-Het Ontwaken van de Enten;;5;;verhaaltekst 1-5-1;;plaatje 1;;verhaaltekst 1-5-2;;plaatje;;verhaaltekst 1-5-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie
-Het Ontwaken van de Enten;;6;;verhaaltekst 1-6-1;;plaatje 1;;verhaaltekst 1-6-2;;plaatje;;verhaaltekst 1-6-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie
-Het Ontwaken van de Enten;;7;;verhaaltekst 1-7-1;;plaatje 1;;verhaaltekst 1-7-2;;plaatje;;verhaaltekst 1-7-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie
-Het Ontwaken van de Enten;;8;;verhaaltekst 1-8-1;;plaatje 1;;verhaaltekst 1-8-2;;plaatje;;verhaaltekst 1-8-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie
-Het Ontwaken van de Enten;;8;;verhaaltekst 1-8-1;;plaatje 1;;verhaaltekst 1-8-2;;plaatje;;verhaaltekst 1-8-3;;plaatje 3;; ;; ;; ;; ;;
+Het Ontwaken van de Enten;;1;;verhaaltekst 1-1-1;;plaatje 1;;verhaaltekst 1-1-2;;plaatje;;verhaaltekst 1-1-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie;;eigenschap
+Het Ontwaken van de Enten;;2;;verhaaltekst 1-2-1;;plaatje 1;;verhaaltekst 1-2-2;;plaatje;;verhaaltekst 1-2-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie;;eigenschap
+Het Ontwaken van de Enten;;3;;verhaaltekst 1-3-1;;plaatje 1;;verhaaltekst 1-3-2;;plaatje;;verhaaltekst 1-3-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie;;eigenschap
+Het Ontwaken van de Enten;;4;;verhaaltekst 1-4-1;;plaatje 1;;verhaaltekst 1-4-2;;plaatje;;verhaaltekst 1-4-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie;;eigenschap
+Het Ontwaken van de Enten;;5;;verhaaltekst 1-5-1;;plaatje 1;;verhaaltekst 1-5-2;;plaatje;;verhaaltekst 1-5-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie;;eigenschap
+Het Ontwaken van de Enten;;6;;verhaaltekst 1-6-1;;plaatje 1;;verhaaltekst 1-6-2;;plaatje;;verhaaltekst 1-6-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie;;eigenschap
+Het Ontwaken van de Enten;;7;;verhaaltekst 1-7-1;;plaatje 1;;verhaaltekst 1-7-2;;plaatje;;verhaaltekst 1-7-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie;;eigenschap
+Het Ontwaken van de Enten;;8;;verhaaltekst 1-8-1;;plaatje 1;;verhaaltekst 1-8-2;;plaatje;;verhaaltekst 1-8-3;;plaatje 3;;eigenschap verhaaltekst;;eigenschap plaatje;;eerste optie;;tweede optie;;derde optie;;eigenschap
+Het Ontwaken van de Enten;;9;;verhaaltekst 1-8-1;;plaatje 1;;verhaaltekst 1-8-2;;plaatje;;verhaaltekst 1-8-3;;plaatje 3;; ;; ;; ;; ;; ;;
