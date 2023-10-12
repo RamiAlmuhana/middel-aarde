@@ -4,6 +4,7 @@ import tkinter as tk
 
 def maak_keuzemoment(main_window, karakter, verhaal, stage, keuzetekst, keuzeplaatje, eigenschap):
     from main import hoofd_menu
+    from verhaalkeuze import kies_verhaal
     button_font = ("Footlight MT Light", 12, "bold")
     for widget in main_window.winfo_children():
         widget.destroy()
@@ -30,11 +31,17 @@ def maak_keuzemoment(main_window, karakter, verhaal, stage, keuzetekst, keuzepla
                           bg='lightgreen')
         button_3 = Button(main_window, text=verhaal[stage]['keuze_3'], width=40, height=7,
                           command=lambda: maak_keuzemoment(main_window, karakter, verhaal, verhaal[stage]['stap'],
-                                                           'tekst_3', 'plaatje_3', verhaal[stage]['eigenschap']),
-                          font=button_font, bg='lightgreen')
+                                    'tekst_3', 'plaatje_3', verhaal[stage]['eigenschap']),
+                                            font=button_font, bg='lightgreen')
+        button_hoofdmenu = Button(main_window, text='hoofdmenu', command=lambda: hoofd_menu(main_window),
+                                            font=button_font, bg='lightgreen', width=10, height=1)
+        button_verhaal = Button(main_window, text='kies verhaal', command=lambda: kies_verhaal(main_window, karakter),
+                                            font=button_font, bg='lightgreen', width=10, height=1)
 
         progress.pack()
         verhaaltekst.pack()
+        button_verhaal.place(x=1250, y=500)
+        button_hoofdmenu.place(x=1250, y=550)
         # verhaalplaatje.pack()
         if '   ' not in verhaaltekst['text']:
             button_1.pack(side="left", pady=10, padx=10)
@@ -42,7 +49,6 @@ def maak_keuzemoment(main_window, karakter, verhaal, stage, keuzetekst, keuzepla
             button_3.pack(side="left", pady=50, padx=10)
         else:
             from karakter_keuze import kies_karakter
-            from verhaalkeuze import kies_verhaal
             dood = Label(main_window, text='je hebt verloren', font=button_font)
             verhaalkeuzeknop = Button(main_window, text='terug naar verhaalkeuze', width=40, height=7,
                                       command=lambda: kies_verhaal(main_window, karakter), font=button_font)

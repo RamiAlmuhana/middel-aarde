@@ -11,9 +11,9 @@ def karakter_gekozen(venster, karakter):
                          font=label_font)
     label_1 = Label(venster, text="Wilt u verder?", width=40, height=7, font=("Footlight MT Light", 18))
     button1 = Button(venster, text="Ja", width=30, height=7, command=lambda: kies_verhaal(venster, karakter),
-                     font=("Footlight MT Light", 12))
+                     font=("Footlight MT Light", 12), bg='light green')
     button2 = Button(venster, text="Nee", width=30, height=7, command=lambda: on_back_button_clicked(venster),
-                     font=("Footlight MT Light", 12))
+                     font=("Footlight MT Light", 12), bg='light green')
 
     karakternaam.pack()
     label_1.pack(side="left", pady=50, padx=10)
