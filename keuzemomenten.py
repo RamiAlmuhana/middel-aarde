@@ -25,8 +25,17 @@ def maak_keuzemoment(root, menu, karakter, verhaal, stage, keuzetekst, keuzeplaa
             button_2.pack(side="left", pady=50, padx=20)
             button_3.pack(side="left", pady=50, padx=10)
         else:
-            dood = Label(root, text='je hebt verloren')
+            from karakter_keuze import kies_karakter
+            from verhaalkeuze import kies_verhaal
+            dood = Label(root, text='je hebt verloren', font=button_font)
+            verhaalkeuzeknop = Button(root, text='terug naar verhaalkeuze', width=40, height=7,
+                                      command=lambda: kies_verhaal(root, menu, karakter), font=button_font)
+            karakterkeuzeknop = Button(root, text='terug naar karakterkeuze', width=40, height=7,
+                                       command=lambda: kies_karakter(root, menu), font=button_font)
             dood.pack()
+            verhaalkeuzeknop.pack(side='left', pady=50, padx=20)
+            karakterkeuzeknop.pack(side='left', pady=50, padx=20)
+
     else:
         eindscherm = Label(root, text='eindscherm')
         eindscherm.pack()
