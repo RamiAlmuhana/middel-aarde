@@ -40,8 +40,8 @@ def maak_keuzemoment(main_window, karakter, verhaal, stage, keuzetekst, keuzepla
 
         progress.pack()
         verhaaltekst.pack()
-        button_verhaal.place(x=1250, y=500)
-        button_hoofdmenu.place(x=1250, y=550)
+        button_verhaal.place(x=1250, y=550)
+        button_hoofdmenu.place(x=1250, y=600)
         # verhaalplaatje.pack()
         if '   ' not in verhaaltekst['text']:
             button_1.pack(side="left", pady=10, padx=10)
