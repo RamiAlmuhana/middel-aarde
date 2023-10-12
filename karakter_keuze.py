@@ -20,7 +20,7 @@ def maak_karakter_dict():
     return export
 
 
-def kies_karakter(venster):
+def kies_karakter(venster, menu):
 
     karakter_data = maak_karakter_dict()
     for widget in venster.winfo_children():
@@ -31,9 +31,9 @@ def kies_karakter(venster):
 
     button_font = ("Footlight MT Light", 12, "bold")
     label1 = Label(knoppen_frame,text= "Welk karakter wilt u kiezen?", font=("Footlight MT Light", 18))
-    button_1 = Button(knoppen_frame, text=karakter_data[0]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, karakter_data[0]), font=button_font)
-    button_2 = Button(knoppen_frame, text=karakter_data[1]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, karakter_data[1]), font=button_font)
-    button_3 = Button(knoppen_frame, text=karakter_data[2]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, karakter_data[2]), font=button_font)
+    button_1 = Button(knoppen_frame, text=karakter_data[0]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, menu, karakter_data[0]), font=button_font)
+    button_2 = Button(knoppen_frame, text=karakter_data[1]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, menu, karakter_data[1]), font=button_font)
+    button_3 = Button(knoppen_frame, text=karakter_data[2]['naam'], width=30, height=7, command=lambda: karakter_gekozen(venster, menu, karakter_data[2]), font=button_font)
 
     label1.pack()
     button_1.pack(side="left", padx=10)
