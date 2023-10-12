@@ -36,11 +36,11 @@ def kies_verhaal(main_window, karakter):
     button_font = ("Footlight MT Light", 13, "bold")
 
     instructie = Label(main_window, text='In welk verhaal wil je je verdiepen?', font=("Footlight MT Light", 18))
-    button_1 = Button(main_window, text='Avontuur in de Shire', width=30, height=7,
+    button_1 = Button(main_window, text='Avontuur in de Shire', width=30, height=7, bg='light green',
                       command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_1.txt'), font=button_font)
-    button_2 = Button(main_window, text='Zoektocht naar het Zwaard', width=30, height=7,
+    button_2 = Button(main_window, text='Zoektocht naar het Zwaard', width=30, height=7, bg='light green',
                       command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_2.txt'), font=button_font)
-    button_3 = Button(main_window, text='Ontwakenen van de Enten', width=30, height=7,
+    button_3 = Button(main_window, text='Ontwakenen van de Enten', width=30, height=7, bg='light green',
                       command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_3.txt'), font=button_font)
 
     instructie.pack()
