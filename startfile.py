@@ -10,6 +10,5 @@ def test_star(venster):
     venster.mainloop()
 
 
-
 root = Tk()
 test_star(root)
