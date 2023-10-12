@@ -20,10 +20,6 @@ def karakter_aanmaken(main_window):
     # confirmation_label = Label(main_window, text="Personage is aangemaakt!", font=('Helvetica bold', 20))
     # confirmation_label.pack(pady=50)
 
-    # Terugknop naar het beginscherm
-    back_button = Button(main_window, text="Naar het hoofdmenu", command=lambda: main_window())
-    back_button.pack()
-
     gebruikers_input = Entry(main_window)
 
     rassen = ["Mens", "Elf", "Hobbit", "Dwerg"]
@@ -39,13 +35,14 @@ def karakter_aanmaken(main_window):
     eigenschappen_menu = OptionMenu(main_window, eigenschappen_clicked, *eigenschappen)
 
     # Buttons
-    font = ("Helvetica", 16)
-    terugknop = tk.Button(main_window, text="Terug naar main menu", bg='lightgreen', width=55, height=2,
+    font = ("Helvetica", 13)
+    terugknop = tk.Button(main_window, text="Terug naar main menu", bg='lightgreen', width=33, height=2,
                           command=lambda: hoofd_menu(main_window), font=font)
-    terugknop.place(x=400, y=400)
-    aanmaak_knop = Button(main_window, text="Aanmaken",
+    terugknop.place(x=200, y=500)
+    aanmaak_knop = Button(main_window, text="Aanmaken", bg='lightgreen', width=33, height=2,
                           command=lambda: personages_wegschrijven(gebruikers_input, rassen_clicked,
-                                                                  eigenschappen_clicked))
+                                                                  eigenschappen_clicked), font=font)
+    aanmaak_knop.place(x=900, y=500)
 
     # karakters_scherm_aanmaken = tk.Frame(main_window)
     # karakters_scherm_aanmaken.place(x=0, y=0, relwidth=1, relheight=1)
@@ -63,4 +60,3 @@ def karakter_aanmaken(main_window):
     eigenschappen_menu.place(relx=0.5, rely=0.62, anchor="center")
     titel.pack()
     # terug_knop.place(relx=0.25, rely=0.75, anchor="center")
-    aanmaak_knop.place(relx=0.75, rely=0.75, anchor="center")
