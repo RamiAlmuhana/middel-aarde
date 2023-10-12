@@ -71,11 +71,9 @@ def show_admin_page(main_window):
     for widget in main_window.winfo_children():
         widget.destroy()
 
-    # Maak een frame voor de admin-pagina
     admin_frame = tk.Frame(main_window)
     admin_frame.pack()
 
-    # Voeg hier widgets toe voor de admin-pagina
     admin_label = tk.Label(admin_frame, text="Dit is de admin-pagina")
     admin_label.pack()
 

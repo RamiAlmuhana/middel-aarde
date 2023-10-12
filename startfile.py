@@ -9,6 +9,8 @@ def start_window():
     main_window.geometry("1400x700")
     center_window(main_window)
     main_window.resizable(False, False)
+    logo = tk.PhotoImage(file="images/ring_logo.png")
+    main_window.iconphoto(True, logo)
 
     main_window.mainloop()
 
