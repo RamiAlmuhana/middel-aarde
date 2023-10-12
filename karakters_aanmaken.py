@@ -3,7 +3,7 @@ import tkinter as tk
 
 
 def personages_wegschrijven(text_File, selected_rassen, selected_eigenschappen):
-    with open("karakters.txt", "a") as file:
+    with open("database/karakters.txt", "a") as file:
         user_Input = text_File.get()
         selected_option_rassen = selected_rassen.get()
         selected_option_eigenschappen = selected_eigenschappen.get()
@@ -11,7 +11,7 @@ def personages_wegschrijven(text_File, selected_rassen, selected_eigenschappen):
         text_File.delete(0, tk.END)
 
 def karakter_aanmaken(main_window):
-    from main import create_main_app_frame
+    from main import hoofd_menu
     karakter_aanmaken_frame = tk.Frame(main_window)
     karakter_aanmaken_frame.place(x=0, y=0, relwidth=1, relheight=1)
     main_window.title("Personage aangemaakt")
@@ -41,7 +41,7 @@ def karakter_aanmaken(main_window):
     # Buttons
     font = ("Helvetica", 16)
     terugknop = tk.Button(main_window, text="Terug naar main menu", bg='lightgreen', width=55, height=2,
-                          command=lambda: create_main_app_frame(main_window), font=font)
+                          command=lambda: hoofd_menu(main_window), font=font)
     terugknop.place(x=400, y=400)
     aanmaak_knop = Button(main_window, text="Aanmaken",
                           command=lambda: personages_wegschrijven(gebruikers_input, rassen_clicked,

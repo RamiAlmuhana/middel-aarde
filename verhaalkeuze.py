@@ -2,7 +2,7 @@ from tkinter import Label, Button, Tk
 from keuzemomenten import maak_keuzemoment
 
 
-def maak_verhaal_dict(root, menu, karakter, verhaal):
+def maak_verhaal_dict(main_window, karakter, verhaal):
     with open(verhaal) as bestand:
         verhaaldata = bestand.read()
     verhaaldata = verhaaldata.splitlines()
@@ -26,19 +26,22 @@ def maak_verhaal_dict(root, menu, karakter, verhaal):
             'eigenschap': split_data[13]
         }
         export.append(verhaal_dict)
-    maak_keuzemoment(root, menu, karakter, export, 0, 'tekst_1', 'plaatje_1', '')
+    maak_keuzemoment(main_window, karakter, export, 0, 'tekst_1', 'plaatje_1', '')
 
 
-def kies_verhaal(root, menu, karakter):
-    for widget in root.winfo_children():
+def kies_verhaal(main_window, karakter):
+    for widget in main_window.winfo_children():
         widget.destroy()
 
     button_font = ("Footlight MT Light", 13, "bold")
 
-    instructie = Label(root, text='In welk verhaal wil je je verdiepen?', font=("Footlight MT Light", 18))
-    button_1 = Button(root, text='Avontuur in de Shire', width=30, height=7, command=lambda: maak_verhaal_dict(root, menu, karakter, 'verhaal_1.txt'), font=button_font)
-    button_2 = Button(root, text='Zoektocht naar het Zwaard', width=30, height=7, command=lambda: maak_verhaal_dict(root, menu, karakter, 'verhaal_2.txt'), font=button_font)
-    button_3 = Button(root, text='Ontwakenen van de Enten', width=30, height=7, command=lambda: maak_verhaal_dict(root, menu, karakter, 'verhaal_3.txt'), font=button_font)
+    instructie = Label(main_window, text='In welk verhaal wil je je verdiepen?', font=("Footlight MT Light", 18))
+    button_1 = Button(main_window, text='Avontuur in de Shire', width=30, height=7,
+                      command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_1.txt'), font=button_font)
+    button_2 = Button(main_window, text='Zoektocht naar het Zwaard', width=30, height=7,
+                      command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_2.txt'), font=button_font)
+    button_3 = Button(main_window, text='Ontwakenen van de Enten', width=30, height=7,
+                      command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_3.txt'), font=button_font)
 
     instructie.pack()
     button_1.pack(side="left", pady=50, padx=12)

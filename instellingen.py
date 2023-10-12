@@ -3,7 +3,7 @@ from muziek import toggle_music, play_startup_music
 
 
 def open_instellingen(main_window):
-    from main import create_main_app_frame
+    from main import hoofd_menu
     font = ("Helvetica", 16)
     instellingen_frame = tk.Frame(main_window)
     instellingen_frame.place(x=0, y=0, relwidth=1, relheight=1)
@@ -16,7 +16,7 @@ def open_instellingen(main_window):
                                command=lambda: open_inlogscherm(main_window), font=font)
     admin_inloggen.place(x=400, y=300)
     terugknop = tk.Button(instellingen_frame, text="Terug naar main menu", bg='lightgreen', width=55, height=2,
-                               command=lambda: create_main_app_frame(main_window), font=font)
+                          command=lambda: hoofd_menu(main_window), font=font)
     terugknop.place(x=400, y=400)
 
 
@@ -67,6 +67,7 @@ def perform_login(main_window):
 
 
 def show_admin_page(main_window):
+    from main import hoofd_menu
     for widget in main_window.winfo_children():
         widget.destroy()
 
@@ -77,3 +78,7 @@ def show_admin_page(main_window):
     # Voeg hier widgets toe voor de admin-pagina
     admin_label = tk.Label(admin_frame, text="Dit is de admin-pagina")
     admin_label.pack()
+
+    terugknop = tk.Button(main_window, text="Log out", bg='lightgreen', width=55, height=2,
+                          command=lambda: hoofd_menu(main_window))
+    terugknop.place(x=400, y=400)
