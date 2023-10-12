@@ -1,14 +1,19 @@
-from tkinter import Tk, Label, Entry, OptionMenu, StringVar, Button
+from tkinter import Tk, Label, Entry, OptionMenu, StringVar, Button, messagebox
 import tkinter as tk
 
 
 def personages_wegschrijven(text_File, selected_rassen, selected_eigenschappen):
-    with open("database/karakters.txt", "a") as file:
-        user_Input = text_File.get()
-        selected_option_rassen = selected_rassen.get()
-        selected_option_eigenschappen = selected_eigenschappen.get()
-        file.write(f"{user_Input};{selected_option_rassen};{selected_option_eigenschappen}\n")
-        text_File.delete(0, tk.END)
+    if len(text_File.get()) == 0:
+        messagebox.showerror("Error", "Voer een naam in!")
+    else:
+        with open("database/karakters.txt", "w") as file:
+            user_Input = text_File.get().capitalize()
+            selected_option_rassen = selected_rassen.get()
+            selected_option_eigenschappen = selected_eigenschappen.get()
+            file.write(f"{user_Input};;{selected_option_rassen};;Custom karakter;;{selected_option_eigenschappen};; ")
+            text_File.delete(0, tk.END)
+            messagebox.showinfo("Succes", "Karakter is aangemaakt!!!!")
+
 
 def karakter_aanmaken(main_window):
     from main import hoofd_menu
@@ -16,14 +21,10 @@ def karakter_aanmaken(main_window):
     karakter_aanmaken_frame.place(x=0, y=0, relwidth=1, relheight=1)
     main_window.title("Personage aangemaakt")
 
-    # Bevestigingsscherm maken
-    # confirmation_label = Label(main_window, text="Personage is aangemaakt!", font=('Helvetica bold', 20))
-    # confirmation_label.pack(pady=50)
-
-    gebruikers_input = Entry(main_window)
+    gebruikers_input_karakter_naam = Entry(main_window)
 
     rassen = ["Mens", "Elf", "Hobbit", "Dwerg"]
-    eigenschappen = ["Bijl", "Boog", "Superslim"]
+    eigenschappen = ["bijl", "boog", "super slim"]
 
     rassen_clicked = StringVar()
     eigenschappen_clicked = StringVar()
@@ -40,23 +41,19 @@ def karakter_aanmaken(main_window):
                           command=lambda: hoofd_menu(main_window), font=font)
     terugknop.place(x=200, y=500)
     aanmaak_knop = Button(main_window, text="Aanmaken", bg='lightgreen', width=33, height=2,
-                          command=lambda: personages_wegschrijven(gebruikers_input, rassen_clicked,
+                          command=lambda: personages_wegschrijven(gebruikers_input_karakter_naam, rassen_clicked,
                                                                   eigenschappen_clicked), font=font)
     aanmaak_knop.place(x=900, y=500)
 
-    # karakters_scherm_aanmaken = tk.Frame(main_window)
-    # karakters_scherm_aanmaken.place(x=0, y=0, relwidth=1, relheight=1)
-    # Labels
     titel = Label(main_window, text="Karakter aanmaken", font=('Helvetica bold', 20))
     karakter_naam_kiezen = Label(main_window, text="Naam kiezen")
     Karakter_ras_kiezen = Label(main_window, text="Rassen")
     Karakter_eigenschap_kiezen = Label(main_window, text="Eigenschappen")
 
     karakter_naam_kiezen.place(relx=0.5, rely=0.25, anchor="center")
-    gebruikers_input.place(relx=0.5, rely=0.3, anchor="center")
+    gebruikers_input_karakter_naam.place(relx=0.5, rely=0.3, anchor="center")
     Karakter_ras_kiezen.place(relx=0.5, rely=0.38, anchor="center")
     rassen_menu.place(relx=0.5, rely=0.45, anchor="center")
     Karakter_eigenschap_kiezen.place(relx=0.5, rely=0.55, anchor="center")
     eigenschappen_menu.place(relx=0.5, rely=0.62, anchor="center")
     titel.pack()
-    # terug_knop.place(relx=0.25, rely=0.75, anchor="center")

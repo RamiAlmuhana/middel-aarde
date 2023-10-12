@@ -17,15 +17,15 @@ maak_scherm_a_aan(root)
 # label.pack()
 #
 #
-# # images resizen:
-# from PIL import Image, ImageTk
-#
-# im = Image.open("ybear.jpg")
-# resize = im.resize((200, 200))
-# voorbeeld = ImageTk.PhotoImage(resize)
-#
-# label_image = Label(root, image=voorbeeld)
-# label_image.image = voorbeeld
+# images resizen:
+from PIL import Image, ImageTk
+
+im = Image.open("ybear.jpg")
+resize = im.resize((200, 200))
+voorbeeld = ImageTk.PhotoImage(resize)
+
+label_image = Label(root, image=voorbeeld)
+label_image.image = voorbeeld
 #
 #
 # # (globals):
