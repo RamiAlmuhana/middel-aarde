@@ -21,22 +21,22 @@ def maak_karakter_dict():
 
 
 def kies_karakter(venster):
+    from main import hoofd_menu
     karakter_data = maak_karakter_dict()
     for widget in venster.winfo_children():
         widget.destroy()
 
-    knoppen_frame = Frame(venster)
-    knoppen_frame.pack(expand=True)
+    # venster = Frame(venster)
+    # venster.pack(expand=True)
 
-    font = ("Footlight MT Light", 12, "bold")
-    label1 = Label(knoppen_frame, text="Welk karakter wilt u kiezen?", font=font)
-
-    button_1_image = PhotoImage(file="images/frodo.png")
-    button_1 = Button(knoppen_frame, image=button_1_image, command=lambda: karakter_gekozen(venster, karakter_data[0]))
-    button_1.image = button_1_image
-    button_1.bind("<Button-1>", lambda event: karakter_gekozen(venster, karakter_data[0]))
-    button_1.pack()
-    karakternaam = Label(knoppen_frame, text='Frodo', font=font)
+    button_font = ("Footlight MT Light", 12, "bold")
+    label1 = Label(knoppen_frame, text="Welk karakter wilt u kiezen?", font=("Footlight MT Light", 18))
+    button_1 = Button(knoppen_frame, text=karakter_data[0]['naam'], width=30, height=7,
+                      command=lambda: karakter_gekozen(venster, karakter_data[0]), font=button_font)
+    button_2 = Button(knoppen_frame, text=karakter_data[1]['naam'], width=30, height=7,
+                      command=lambda: karakter_gekozen(venster, karakter_data[1]), font=button_font)
+    button_3 = Button(knoppen_frame, text=karakter_data[2]['naam'], width=30, height=7,
+                      command=lambda: karakter_gekozen(venster, karakter_data[2]), font=button_font)
 
     button_2_image = PhotoImage(file="images/gimli.png")
     button_2 = Button(knoppen_frame, image=button_2_image, command=lambda: karakter_gekozen(venster, karakter_data[1]))
@@ -53,5 +53,6 @@ def kies_karakter(venster):
     label1.place()
     karakternaam.place(x=100, y=500)
     button_1.pack(side="left", padx=10)
-    button_2.pack(side="left", padx=10)
+    button_2.pack(side="left", padx=100)
     button_3.pack(side="left", padx=10)
+    button_hoofdmenu.place(x=1250, y=600)
