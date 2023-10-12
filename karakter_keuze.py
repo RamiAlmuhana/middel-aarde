@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Button, Frame
+from tkinter import Tk, Label, Button, Frame, PhotoImage
 from beschrijving_karakters import *
 
 
@@ -28,16 +28,30 @@ def kies_karakter(venster):
     knoppen_frame = Frame(venster)
     knoppen_frame.pack(expand=True)
 
-    button_font = ("Footlight MT Light", 12, "bold")
-    label1 = Label(knoppen_frame, text="Welk karakter wilt u kiezen?", font=("Footlight MT Light", 18))
-    button_1 = Button(knoppen_frame, text=karakter_data[0]['naam'], width=30, height=7,
-                      command=lambda: karakter_gekozen(venster, karakter_data[0]), font=button_font)
-    button_2 = Button(knoppen_frame, text=karakter_data[1]['naam'], width=30, height=7,
-                      command=lambda: karakter_gekozen(venster, karakter_data[1]), font=button_font)
-    button_3 = Button(knoppen_frame, text=karakter_data[2]['naam'], width=30, height=7,
-                      command=lambda: karakter_gekozen(venster, karakter_data[2]), font=button_font)
+    font = ("Footlight MT Light", 12, "bold")
+    label1 = Label(knoppen_frame, text="Welk karakter wilt u kiezen?", font=font)
 
-    label1.pack()
+    button_1_image = PhotoImage(file="images/frodo.png")
+    button_1 = Button(knoppen_frame, image=button_1_image, command=lambda: karakter_gekozen(venster, karakter_data[0]))
+    button_1.image = button_1_image
+    button_1.bind("<Button-1>", lambda event: karakter_gekozen(venster, karakter_data[0]))
+    button_1.pack()
+    karakternaam = Label(knoppen_frame, text='Frodo', font=font)
+
+    button_2_image = PhotoImage(file="images/gimli.png")
+    button_2 = Button(knoppen_frame, image=button_2_image, command=lambda: karakter_gekozen(venster, karakter_data[1]))
+    button_2_image.image = button_2_image
+    button_2.bind("<Button-1>", lambda event: karakter_gekozen(venster, karakter_data[1]))
+    button_2.pack()
+
+    button_3_image = PhotoImage(file="images/legolas.png")
+    button_3 = Button(knoppen_frame, image=button_3_image, command=lambda: karakter_gekozen(venster, karakter_data[2]))
+    button_3_image.image = button_3_image
+    button_3.bind("<Button-1>", lambda event: karakter_gekozen(venster, karakter_data[2]))
+    button_3.pack()
+
+    label1.place()
+    karakternaam.place(x=100, y=500)
     button_1.pack(side="left", padx=10)
     button_2.pack(side="left", padx=10)
     button_3.pack(side="left", padx=10)
