@@ -13,13 +13,13 @@ def fade_in(splash_window):
     for alpha in range(0, 256, 8):
         splash_window.attributes("-alpha", alpha / 255)
         splash_window.update_idletasks()
-        time.sleep(0.02)
+        time.sleep(0.03)
 
 def fade_out(splash_window):
     for alpha in range(255, -1, -8):
         splash_window.attributes("-alpha", alpha / 255)
         splash_window.update_idletasks()
-        time.sleep(0.02)
+        time.sleep(0.03)
 
 def main():
     splash_window = tk.Tk()
@@ -35,7 +35,6 @@ def main():
     fade_in(splash_window)
 
     splash_window.after(800, lambda: [splash_window.destroy()])
-
     fade_out(splash_window)
 
     splash_window.mainloop()
