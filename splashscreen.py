@@ -37,7 +37,6 @@ def main():
     fade_in(splash_window)
 
     splash_window.after(800, lambda: [splash_window.destroy()])
-    fade_out(splash_window)
 
     splash_window.mainloop()
 
