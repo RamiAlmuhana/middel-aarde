@@ -1,4 +1,4 @@
-from tkinter import Label, Button, Tk
+from tkinter import Label, Button, Tk, PhotoImage
 from keuzemomenten import maak_keuzemoment
 
 
@@ -33,17 +33,50 @@ def kies_verhaal(main_window, karakter):
     for widget in main_window.winfo_children():
         widget.destroy()
 
-    button_font = ("Footlight MT Light", 13, "bold")
+    background_image = PhotoImage(file="images/karakter_background.png")
 
-    instructie = Label(main_window, text='In welk verhaal wil je je verdiepen?', font=("Footlight MT Light", 18))
-    button_1 = Button(main_window, text='Avontuur in de Shire', width=30, height=7, bg='light green',
-                      command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_1.txt'), font=button_font)
-    button_2 = Button(main_window, text='Zoektocht naar het Zwaard', width=30, height=7, bg='light green',
-                      command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_2.txt'), font=button_font)
-    button_3 = Button(main_window, text='Ontwakenen van de Enten', width=30, height=7, bg='light green',
-                      command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_3.txt'), font=button_font)
+    background_label = Label(main_window, image=background_image)
+    background_label.image = background_image
+    background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-    instructie.pack()
-    button_1.pack(side="left", pady=50, padx=12)
-    button_2.pack(side="left", pady=50, padx=200)
-    button_3.pack(side="left", pady=50, padx=10)
+    schermnaam = Label(main_window, text="In welk verhaal wil je verdiepen?", font=("Footlight MT Light", 18))
+    schermnaam.place(x=550, y=25)
+
+    button_1_image = PhotoImage(file="images/the_shire.png")
+    button_1 = Button(main_window, image=button_1_image,
+                      command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_1.txt'))
+    button_1_image.image = button_1_image
+    button_1.bind("<Button-1>", lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_1.txt'))
+    button_1.place(x=125, y=125)
+
+    verhaal_1 = Label(main_window, text="Avontuur in de Shire", font=("Footlight MT Light", 18))
+    verhaal_1.place(x=150, y=550)
+
+    button_2_image = PhotoImage(file="images/elendil sword.png")
+    button_2 = Button(main_window, image=button_2_image,
+                      command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_2.txt'))
+    button_2_image.image = button_2_image
+    button_2.bind("<Button-1>", lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_2.txt'))
+    button_2.place(x=500, y=125)
+
+    verhaal_2= Label(main_window, text="Zoektocht naar het Zwaard", font=("Footlight MT Light", 18))
+    verhaal_2.place(x=500, y=550)
+
+    # button_2 = Button(main_window, text='Zoektocht naar het Zwaard', width=30, height=7, bg='light green',
+    #                   command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_2.txt'),
+    #                   font=button_font)
+
+    button_3_image = PhotoImage(file="images/the_ents.png")
+    button_3 = Button(main_window, image=button_3_image,
+                      command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_3.txt'))
+    button_3_image.image = button_3_image
+    button_3.bind("<Button-1>", lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_3.txt'))
+    button_3.place(x=900, y=125)
+
+    verhaal_3 = Label(main_window, text="Ontwakenen van de Enten", font=("Footlight MT Light", 18))
+    verhaal_3.place(x=890, y=550)
+
+
+    # button_3 = Button(main_window, text='Ontwakenen van de Enten', width=30, height=7, bg='light green',
+    #                   command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_3.txt'),
+    #                   font=button_font)

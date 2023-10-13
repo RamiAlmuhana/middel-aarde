@@ -4,20 +4,31 @@ from muziek import toggle_music, play_startup_music
 
 def open_instellingen(main_window):
     from main import hoofd_menu
-    font = ("Helvetica", 16)
+    font = ("Footlight MT Light", 16, 'bold')
     instellingen_frame = tk.Frame(main_window)
     instellingen_frame.place(x=0, y=0, relwidth=1, relheight=1)
-    instellingen_frame.configure(bg="darkgreen")
+    background_image = tk.PhotoImage(file="images/main_menu.png")
 
-    muziek_button = tk.Button(instellingen_frame, text="Pause Music", bg='lightgreen', width=55, height=2, command=lambda: toggle_music(muziek_button), font=font)
-    muziek_button.place(x=400, y=200)
+    background_label = tk.Label(main_window, image=background_image)
+    background_label.image = background_image
+    background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-    admin_inloggen = tk.Button(instellingen_frame, text="Admin inloggen", bg='lightgreen', width=55, height=2,
+    muziek_button = tk.Button(main_window, text="Pauzeer muziek", width=55, height=2,
+                              borderwidth=4,
+                              command=lambda: toggle_music(muziek_button), font=font)
+    muziek_button.place(x=345, y=200)
+    muziek_button.config(font=font)
+
+    admin_inloggen = tk.Button(main_window, text="Admin inloggen", width=55, height=2,
+                               borderwidth=4,
                                command=lambda: open_inlogscherm(main_window), font=font)
-    admin_inloggen.place(x=400, y=300)
-    terugknop = tk.Button(instellingen_frame, text="Terug naar main menu", bg='lightgreen', width=55, height=2,
+    admin_inloggen.place(x=345, y=300)
+    admin_inloggen.config(font=font)
+
+    terugknop = tk.Button(main_window, text="Terug naar main menu", width=55, height=2, borderwidth=4,
                           command=lambda: hoofd_menu(main_window), font=font)
-    terugknop.place(x=400, y=400)
+    terugknop.place(x=345, y=400)
+    terugknop.config(font=font)
 
 
 def open_main(main_window):

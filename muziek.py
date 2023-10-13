@@ -10,11 +10,11 @@ def toggle_music(music_button):
     if music_playing:
         mixer.music.pause()
         music_playing = False
-        music_button.config(text="Play Music")
+        music_button.config(text="Speel muziek")
     else:
         mixer.music.unpause()
         music_playing = True
-        music_button.config(text="Pause Music")
+        music_button.config(text="Pauzeer muziek")
 
 
 def play_startup_music():

@@ -26,10 +26,10 @@ def fade_out(splash_window):
 def main():
     splash_window = tk.Tk()
     splash_window.overrideredirect(True)
-    splash_window.geometry("600x300")
+    splash_window.geometry("500x380")
     center_window(splash_window)
 
-    splash_image = tk.PhotoImage(file="images/logos.png")
+    splash_image = tk.PhotoImage(file="images/splashscreen_logo.png")
 
     splash_label = tk.Label(splash_window, image=splash_image, borderwidth=0)
     splash_label.pack()
