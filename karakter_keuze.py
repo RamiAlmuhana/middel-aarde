@@ -2,7 +2,6 @@ from tkinter import Tk, Label, Button, Frame, PhotoImage
 from beschrijving_karakters import *
 
 
-
 def maak_karakter_dict(file):
     with open(file) as bestand:
         verhaaldata = bestand.read()
@@ -73,5 +72,5 @@ def kies_karakter(venster):
     karakternaam_4.place(x=1100, y=600)
 
     terugknop = Button(venster, text="Terug naar main menu", width=30, height=2, borderwidth=4,
-                          command=lambda: hoofd_menu(venster))
+                       command=lambda: hoofd_menu(venster))
     terugknop.place(x=100, y=650)

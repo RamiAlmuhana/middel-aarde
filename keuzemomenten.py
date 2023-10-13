@@ -30,20 +30,20 @@ def maak_keuzemoment(main_window, karakter, verhaal, stage, keuzetekst, keuzepla
             keuze_image.image = keuze_image
         button_1 = Button(main_window, text=verhaal[stage]['keuze_1'], width=40, height=7,
                           command=lambda: maak_keuzemoment(main_window, karakter, verhaal, verhaal[stage]['stap'],
-                                'tekst_1', 'plaatje_1', ''),
-                                            font=button_font, bg='lightgreen')
+                                                           'tekst_1', 'plaatje_1', ''),
+                          font=button_font, bg='lightgreen')
         button_2 = Button(main_window, text=verhaal[stage]['keuze_2'], width=40, height=7,
                           command=lambda: maak_keuzemoment(main_window, karakter, verhaal, verhaal[stage]['stap'],
-                                            'tekst_2', 'plaatje_2', ''),
-                                            font=button_font, bg='lightgreen')
+                                                           'tekst_2', 'plaatje_2', ''),
+                          font=button_font, bg='lightgreen')
         button_3 = Button(main_window, text=verhaal[stage]['keuze_3'], width=40, height=7,
                           command=lambda: maak_keuzemoment(main_window, karakter, verhaal, verhaal[stage]['stap'],
-                                            'tekst_3', 'plaatje_3', verhaal[stage]['eigenschap']),
-                                            font=button_font, bg='lightgreen')
+                                                           'tekst_3', 'plaatje_3', verhaal[stage]['eigenschap']),
+                          font=button_font, bg='lightgreen')
         button_hoofdmenu = Button(main_window, text='hoofdmenu', command=lambda: hoofd_menu(main_window),
-                                            font=button_font, bg='lightgreen', width=10, height=1)
+                                  font=button_font, bg='lightgreen', width=10, height=1)
         button_verhaal = Button(main_window, text='kies verhaal', command=lambda: kies_verhaal(main_window, karakter),
-                                            font=button_font, bg='lightgreen', width=10, height=1)
+                                font=button_font, bg='lightgreen', width=10, height=1)
 
         progress.pack()
         verhaaltekst.pack()
@@ -59,7 +59,8 @@ def maak_keuzemoment(main_window, karakter, verhaal, stage, keuzetekst, keuzepla
             from karakter_keuze import kies_karakter
             dood = Label(main_window, text='je hebt verloren', font=button_font)
             verhaalkeuzeknop = Button(main_window, text='terug naar verhaalkeuze', width=40, height=7,
-                                command=lambda: kies_verhaal(main_window, karakter), font=button_font, bg='light green')
+                                      command=lambda: kies_verhaal(main_window, karakter), font=button_font,
+                                      bg='light green')
             karakterkeuzeknop = Button(main_window, text='terug naar karakterkeuze', width=40, height=7,
                                        command=lambda: kies_karakter(main_window), font=button_font, bg='light green')
             dood.pack()

@@ -8,6 +8,7 @@ from karakter_keuze import kies_karakter
 def knop_sluiten(main_window):
     main_window.destroy()
 
+
 # Define username and password entry as global variables
 username_entry = None
 password_entry = None

@@ -59,12 +59,8 @@ def kies_verhaal(main_window, karakter):
     button_2.bind("<Button-1>", lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_2.txt'))
     button_2.place(x=500, y=125)
 
-    verhaal_2= Label(main_window, text="Zoektocht naar het Zwaard", font=("Footlight MT Light", 18))
+    verhaal_2 = Label(main_window, text="Zoektocht naar het Zwaard", font=("Footlight MT Light", 18))
     verhaal_2.place(x=500, y=550)
-
-    # button_2 = Button(main_window, text='Zoektocht naar het Zwaard', width=30, height=7, bg='light green',
-    #                   command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_2.txt'),
-    #                   font=button_font)
 
     button_3_image = PhotoImage(file="images/the_ents.png")
     button_3 = Button(main_window, image=button_3_image,
@@ -75,8 +71,3 @@ def kies_verhaal(main_window, karakter):
 
     verhaal_3 = Label(main_window, text="Ontwakenen van de Enten", font=("Footlight MT Light", 18))
     verhaal_3.place(x=890, y=550)
-
-
-    # button_3 = Button(main_window, text='Ontwakenen van de Enten', width=30, height=7, bg='light green',
-    #                   command=lambda: maak_verhaal_dict(main_window, karakter, 'database/verhaal_3.txt'),
-    #                   font=button_font)
